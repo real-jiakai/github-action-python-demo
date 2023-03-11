@@ -1,0 +1,15 @@
+name: pytest
+on: workflow_dispatch
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+        - name: clone repository
+          run: |
+            git clone https://github.com/real-jiakai/github-action-python-demo.git
+            cd github-action-python-demo
+        - name: install pytest
+          run: pip install pytest
+        - name: run pytest
+          run: pytest
